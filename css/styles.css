@@ -1,0 +1,93 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Header styling */
+  header {
+    background: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  
+  /* Toggle button styling */
+  #menu-toggle {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    display: none; /* Hidden on desktop */
+  }
+  
+  /* Navigation menu styling */
+  #nav-menu ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  #nav-menu ul li {
+    margin-left: 1.5rem;
+  }
+  
+  #nav-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    transition: color 0.3s;
+  }
+  
+  /* Hover effect with underline animation */
+  #nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s;
+  }
+  
+  #nav-menu ul li a:hover {
+    color: #ddd;
+  }
+  
+  #nav-menu ul li a:hover::after {
+    width: 100%;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    /* Show toggle button */
+    #menu-toggle {
+      display: block;
+    }
+    
+    /* Stack nav items vertically and hide initially */
+    #nav-menu {
+      width: 100%;
+      background: #444;
+      display: none;
+    }
+    
+    #nav-menu ul {
+      flex-direction: column;
+    }
+    
+    #nav-menu ul li {
+      margin: 1rem 0;
+      text-align: center;
+    }
+    
+    /* Show menu when active */
+    #nav-menu.active {
+      display: block;
+    }
+  }
+  
